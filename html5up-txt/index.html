@@ -5,17 +5,19 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Volunteer With Thrive</title>
-	
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="homepage is-preload">
-		<div id="page-wrapper">
 
-			<!-- Header
+<head>
+	<title>Volunteer With Thrive</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="homepage is-preload">
+	<div id="page-wrapper">
+
+		<!-- Header
 				<header id="header">
 					<div class="logo container">
 						<div>
@@ -25,11 +27,11 @@
 					</div>
 				</header>---->
 
-			<!-- Nav -->
-				<nav id="nav">
-					<ul>
-						<li class="current"><a href="index.html">Sign In/Out</a></li>
-						<!------<li>
+		<!-- Nav -->
+		<nav id="nav">
+			<ul>
+				<li class="current"><a href="index.html">Sign In/Out</a></li>
+				<!------<li>
 							<a href="#">About</a>
 							<ul>
 								<li><a href="#">Who We Are</a></li>
@@ -45,124 +47,117 @@
 								</li>
 							</ul>
 						</li>--->
-						<li><a href="left-sidebar.html">Volunteer History</a></li>
-						<li><a href="right-sidebar.html">Kid History</a></li>
-						<li><a href="no-sidebar.html">Volunteer Account Search</a></li>
-					</ul>
-				</nav>
+				<li><a href="left-sidebar.html">Volunteer History</a></li>
+				<li><a href="right-sidebar.html">Kid History</a></li>
+				<li><a href="no-sidebar.html">Volunteer Account Search</a></li>
+			</ul>
+		</nav>
 
-			<!-- Banner -->
-				<section id="banner">
-					<div class="content">
-						<h2>Volunteer With Thrive</h2>
-						<p>We seek to connect children who have deep spiritual, emotional, academic, and physical needs <br>with caring adults who have been blessed with abundance in those areas. <br>You are welcome to join us just once, monthly, or weekly.</p>
-					 
-						<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Volunteer Sign-In</button>
-											  
-											  <div id="id01" class="modal">
-												
-												<form class="modal-content animate" action="/action_page.php">
-												  <div class="imgcontainer">
-													<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-													<img src="images/logo.png" alt="Thrive" class="image">
-												  </div>
-											  
-												  <div class="container">
-													<label for="uname"><b>Email</b></label>
-													<input type="text" placeholder="Enter Email" name="uname" required>
+		<!-- Banner -->
+		<section id="banner">
+			<div class="content" id="app">
+				<h2>Volunteer With Thrive</h2>
+				<p>We seek to connect children who have deep spiritual, emotional, academic, and physical needs <br>with caring
+					adults who have been blessed with abundance in those areas. <br>You are welcome to join us just once, monthly,
+					or weekly.</p>
 
-													<label for="Campus"><b>Campus</b></label>
-												
-													<select name = "Campus">
-														
-															 <option value = "Main">Main Campus</option>
-															 <option value = "School">School Campus</option>
-															 <option value = "Parkridge">Parkridge Campus</option>
-															 <option value = "Middle">Thrive Middle School</option>
-															 <option value = "High">Thrive High School</option>
-													</select>
-															
-											  
-													<!------<label for="psw"><b>Password</b></label>
+				<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Volunteer
+					Sign-In</button>
+
+				<div id="id01" class="modal">
+
+					<form class="modal-content animate" action="/login.php">
+						<div class="imgcontainer">
+							<span onclick="document.getElementById('id01').style.display='none'" class="close"
+								title="Close Modal">&times;</span>
+							<img src="images/logo.png" alt="Thrive" class="image">
+						</div>
+
+						<div class="container">
+							<label for="uname"><b>Email</b></label>
+							<input v-model="email" type="text" placeholder="Enter Email" name="uname" required>
+
+							<label for="Campus"><b>Campus</b></label>
+
+							<select name="Campus">
+
+								<option value="Main">Main Campus</option>
+								<option value="School">School Campus</option>
+								<option value="Parkridge">Parkridge Campus</option>
+								<option value="Middle">Thrive Middle School</option>
+								<option value="High">Thrive High School</option>
+							</select>
+
+							<button @click.prevent="login()" type="submit" class="btn btn-primary">Sign-In</button>
+						</div>
+					</form>
+				</div>
+
+				<button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Volunteer
+					Sign-Out</button>
+
+				<div id="id02" class="modal">
+
+					<form>
+						<div class="imgcontainer">
+							<span onclick="document.getElementById('id02').style.display='none'" class="close"
+								title="Close Modal">&times;</span>
+							<img src="images/logo.png" alt="Thrive" class="image">
+						</div>
+
+						<div class="container">
+							<label for="uname"><b>Email</b></label>
+							<input type="text" placeholder="Enter Email" name="uname" required>
+
+							<label for="Visit_Type"><b>Visit Type</b></label>
+
+							<select name="Vist_Type">
+
+								<option value="Classroom">Classroom</option>
+
+								<option value="Electives">Elective</option>
+
+								<option value="Kitchen">Kitchen</option>
+								<option value="Other">Building Work or Other</option>
+
+							</select>
+							<label for="Kid_Visit"><b>Did you work with a specific kid today?</b></label>
+
+							<select name="Vist_Type">
+
+								<option value="Maria4">Maria M., Class 4</option>
+
+								<option value="Jovani4">Jovani M., Class 4</option>
+
+								<option value="Mariflor4">Mariflor T., Class 4</option>
+								<option value="Christian4">Christian L., Class 4</option>
+								<option value="Tomas3">Tomas M., Class 3</option>
+
+								<option value="Elena3">Elena P., Class 3</option>
+
+								<option value="Andres3">Andres S., Class 3</option>
+								<option value="Enock3">Enock C., Class 3</option>
+								<option value="Ingrid2">Ingrid M., Class 2</option>
+
+								<option value="Bryan2">Bryan M., Class 2</option>
+
+								<option value="Deborah2">Deborah T., Class 2</option>
+								<option value="Christian2">Christian L., Class 2</option>
+								<option value="Roberto1">Roberto M., Class 1</option>
+
+								<option value="Karen1">Karen C., Class 1</option>
+
+								<option value="Edgar1">Edgar P., Class 1</option>
+								<option value="Christina1">Christina L., Class 1</option>
+
+							</select>
+							<label for="comment"><b>Additional Comments</b></label>
+							<input type="text" placeholder="Enter Any Additional Comments About Your Visit" name="comment">
+							<!-----<label for="psw"><b>Password</b></label>
 													<input type="password" placeholder="Enter Password" name="psw" required>--->
-													  
-													<button type="submit">Sign In</button>
-													<!-----<label>
-													  <input type="checkbox" checked="checked" name="remember"> Remember me
-													</label>
-												  </div>
-											  
-												  <div class="container" style="background-color:#f1f1f1">
-													<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-													<span class="psw">Forgot <a href="#">password?</a></span>
-													</div>---->
-													</div>
-												</form>
-												</div>
-												
-					<button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Volunteer Sign-Out</button>
-											  
-											  <div id="id02" class="modal">
-												
-												<form class="modal-content animate" action="/action_page.php">
-												  <div class="imgcontainer">
-													<span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-													<img src="images/logo.png" alt="Thrive" class="image">
-												  </div>
-											  
-												  <div class="container">
-													<label for="uname"><b>Email</b></label>
-													<input type="text" placeholder="Enter Email" name="uname" required>
 
-													<label for="Visit_Type"><b>Visit Type</b></label>
-												
-													<select name = "Vist_Type">
-														
-															 <option value = "Classroom">Classroom</option>
-											
-															 <option value = "Electives">Elective</option>
-														
-															 <option value = "Kitchen">Kitchen</option>
-															 <option value = "Other">Building Work or Other</option>
-										
-													</select>
-													<label for="Kid_Visit"><b>Did you work with a specific kid today?</b></label>
-												
-													<select name = "Vist_Type">
-														
-															 <option value = "Maria4">Maria M., Class 4</option>
-											
-															 <option value = "Jovani4">Jovani M., Class 4</option>
-														
-															 <option value = "Mariflor4">Mariflor T., Class 4</option>
-															 <option value = "Christian4">Christian L., Class 4</option>
-															 <option value = "Tomas3">Tomas M., Class 3</option>
-											
-															 <option value = "Elena3">Elena P., Class 3</option>
-														
-															 <option value = "Andres3">Andres S., Class 3</option>
-															 <option value = "Enock3">Enock C., Class 3</option>
-															 <option value = "Ingrid2">Ingrid M., Class 2</option>
-											
-															 <option value = "Bryan2">Bryan M., Class 2</option>
-														
-															 <option value = "Deborah2">Deborah T., Class 2</option>
-															 <option value = "Christian2">Christian L., Class 2</option>
-															 <option value = "Roberto1">Roberto M., Class 1</option>
-											
-															 <option value = "Karen1">Karen C., Class 1</option>
-														
-															 <option value = "Edgar1">Edgar P., Class 1</option>
-															 <option value = "Christina1">Christina L., Class 1</option>
-										
-													</select>
-													<label for="comment"><b>Additional Comments</b></label>
-													<input type="text" placeholder="Enter Any Additional Comments About Your Visit" name="comment">
-													<!-----<label for="psw"><b>Password</b></label>
-													<input type="password" placeholder="Enter Password" name="psw" required>--->
-													  
-													<button type="submit">Sign Out</button>
-													<!------<label>
+							<button type="submit">Sign Out</button>
+							<!------<label>
 													  <input type="checkbox" checked="checked" name="remember"> Remember me
 													</label>
 												  </div>
@@ -170,331 +165,352 @@
 												  <div class="container" style="background-color:#f1f1f1">
 													<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
 													<span class="psw">Forgot <a href="#">password?</a></span>--->
-												  </div>
-												</form>
-											  </div>
-				
-					</div>
-				</section>
-
-			<!-- Main -->
-				<section id="main">
-					<div class="container">
-						<div class="row gtr-200">
-							<div class="col-12">
-
-								<!-- Highlight -->
-									<section class="box highlight">
-										<ul class="special">
-											<html>
-											<head>
-											<meta name="viewport" content="width=device-width, initial-scale=1">
-											<style>
-											body {font-family: Arial, Helvetica, sans-serif;}
-											input[type=text], input[type=password] {
-												width: 100%;
-												padding: 12px 20px;
-												margin: 8px 0;
-												display: inline-block;
-												border: 1px solid #ccc;
-												box-sizing: border-box;
-											  }
-											  
-											  /* Set a style for all buttons */
-											  button {
-												background-color: #4CAF50;
-												color: white;
-												padding: 14px 20px;
-												margin: 8px 0;
-												border: none;
-												cursor: pointer;
-												width: 100%;
-											  }
-											  
-											  button:hover {
-												opacity: 0.8;
-											  }
-											  
-											  /* Extra styles for the cancel button */
-											  .cancelbtn {
-												width: auto;
-												padding: 10px 18px;
-												background-color: #f44336;
-											  }
-											  
-											  /* Center the image and position the close button */
-											  .imgcontainer {
-												text-align: center;
-												margin: 24px 0 12px 0;
-												position: relative;
-											  }
-											  
-											  img.avatar {
-												width: 40%;
-												border-radius: 50%;
-											  }
-											  
-											  .container {
-												padding: 16px;
-											  }
-											  
-											  span.psw {
-												float: right;
-												padding-top: 16px;
-											  }
-											  
-											  /* The Modal (background) */
-											  .modal {
-												display: none; /* Hidden by default */
-												position: fixed; /* Stay in place */
-												z-index: 1; /* Sit on top */
-												left: 0;
-												top: 0;
-												width: 100%; /* Full width */
-												height: 100%; /* Full height */
-												overflow: auto; /* Enable scroll if needed */
-												background-color: rgb(0,0,0); /* Fallback color */
-												background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-												padding-top: 60px;
-											  }
-											  
-											  /* Modal Content/Box */
-											  .modal-content {
-												background-color: #fefefe;
-												margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-												border: 1px solid #888;
-												width: 80%; /* Could be more or less, depending on screen size */
-											  }
-											  
-											  /* The Close Button (x) */
-											  .close {
-												position: absolute;
-												right: 25px;
-												top: 0;
-												color: #000;
-												font-size: 35px;
-												font-weight: bold;
-											  }
-											  
-											  .close:hover,
-											  .close:focus {
-												color: red;
-												cursor: pointer;
-											  }
-											  
-											  /* Add Zoom Animation */
-											  .animate {
-												-webkit-animation: animatezoom 0.6s;
-												animation: animatezoom 0.6s
-											  }
-											  
-											  @-webkit-keyframes animatezoom {
-												from {-webkit-transform: scale(0)} 
-												to {-webkit-transform: scale(1)}
-											  }
-												
-											  @keyframes animatezoom {
-												from {transform: scale(0)} 
-												to {transform: scale(1)}
-											  }
-											  
-											  /* Change styles for span and cancel button on extra small screens */
-											  @media screen and (max-width: 300px) {
-												span.psw {
-												   display: block;
-												   float: none;
-												}
-												.cancelbtn {
-												   width: 100%;
-												}
-											  }
-											  </style>
-											  </head>
-											  <body>
-											  
-											<!------<h2>THRIVE Volunteer Account Log-In</h2>
-												<p>View Your Volunteer History Here</p>
-											  
-											  <button onclick="document.getElementById('id03').style.display='block'" style="width:auto;">Login</button>
-											  
-											  <div id="id03" class="modal">
-												
-												<form class="modal-content animate" action="/action_page.php">
-												  <div class="imgcontainer">
-													<span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
-													<img src="images/logo.png" alt="Thrive" class="image">
-												  </div>
-											  
-												  <div class="container">
-													<label for="uname"><b>Email</b></label>
-													<input type="text" placeholder="Enter Email" name="uname" required>
-											  
-													<label for="psw"><b>Password</b></label>
-													<input type="password" placeholder="Enter Password" name="psw" required>
-													  
-													<button type="submit">Login</button>
-													<label>
-													  <input type="checkbox" checked="checked" name="remember"> Remember me
-													</label>
-												  </div>
-											  
-												  <div class="container" style="background-color:#f1f1f1">
-													<button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
-													<span class="psw">Forgot <a href="#">password?</a></span>
-												  </div>
-												</form>
-											  </div>
-											  --->
-											  <script>
-											  // Get the modal
-											  var modal = document.getElementById('id01');
-											  
-											  // When the user clicks anywhere outside of the modal, close it
-											  window.onclick = function(event) {
-												  if (event.target == modal) {
-													  modal.style.display = "none";
-												  }
-											  }
-										</script>
-										</body>
-										</html>
-										<html>
-											<head>
-												<meta name="viewport" content="width=device-width, initial-scale=1">
-												<!-- Add icon library -->
-												<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-												<style>
-												body {font-family: Arial, Helvetica, sans-serif;}
-												* {box-sizing: border-box;}
-												
-												.input-container {
-												  display: -ms-flexbox; /* IE10 */
-												  display: flex;
-												  width: 100%;
-												  margin-bottom: 15px;
-												}
-												
-												.icon {
-												  padding: 10px;
-												  background: rgb(71, 148, 90);
-												  color: white;
-												  min-width: 50px;
-												  text-align: center;
-												}
-												
-												.input-field {
-												  width: 100%;
-												  padding: 10px;
-												  outline: none;
-												}
-												
-												.input-field:focus {
-												  border: 2px solid rgb(71, 148, 90);
-												}
-												
-												/* Set a style for the submit button */
-												.btn {
-												  background-color: rgb(71, 148, 90);
-												  color: white;
-												  padding: 15px 20px;
-												  border: none;
-												  cursor: pointer;
-												  width: 100%;
-												  opacity: 0.9;
-												}
-												
-												.btn:hover {
-												  opacity: 1;
-												}
-												</style>
-												</head>
-												<body>
-												
-												<form action="/action_page.php" style="max-width:500px;margin:auto">
-													<h2><br>New to THRIVE? Create an Account Below</h2>
-													<div class="input-container">
-														<i class="fa fa-user icon"></i>
-														<input class="input-field" type="text" placeholder="First Name" name="firstnm">
-														</div>
-
-														<div class="input-container">
-															<i class="fa fa-user icon"></i>
-															<input class="input-field" type="text" placeholder="Last Name" name="lastnm">
-															</div>
-
-												  <div class="input-container">
-													<i class="fa fa-envelope icon"></i>
-													<input class="input-field" type="text" placeholder="Email" name="email">
-												  </div>
-												  
-												  <div class="input-container">
-													<i class="fa fa-key icon"></i>
-													<input class="input-field" type="password" placeholder="Password" name="psw">
-													</div>
-													
-													<div class="input-container">
-													<i class="fa fa-user icon"></i>
-													<input class="input-field" type="datetime" placeholder="Birthdate (mm/dd/yyyy)" name="bday">
-													</div>
-
-													<div class="input-container">
-														<i class="fa fa-user icon"></i>
-														<input class="input-field" type="text" placeholder="Organization (optional)" name="org">
-														</div>
-
-												
-												  <button type="submit" class="btn">Create Account</button>
-												</form>
-												
-												</body>
-												</html>
-												
-												
-
-										
-									</section>
-
-							</div>
-							
-							<div class="col-12">
-
-								<!-- Contact -->
-									<section>
-										<h2 class="major"><span>Need Help?</span></h2>
-										<p><center>Please contact Becca Campbell, our volunteer coordinator, for any questions about your visit. </center></p>
-									
-									</section>
-									<!-- About -->
-									<section>
-										<h2 class="major"><span>We are thankful for you!</span></h2>
-										
-									</section>
-
-							</div>
 						</div>
+					</form>
+				</div>
 
-						<footer> 
-							<!-- Copyright -->
-							<center>
-								<div id="copyright">
-							<ul class="menu">
-									<li>&copy; Thrive Lonsdale. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-								</ul>
-							</div></center>
+			</div>
+		</section>
+
+		<!-- Main -->
+		<section id="main">
+			<div class="container">
+				<div class="row gtr-200">
+					<div class="col-12">
+
+						<!-- Highlight -->
+						<section class="box highlight">
+							<ul class="special">
+								<html>
+
+								<head>
+									<meta name="viewport" content="width=device-width, initial-scale=1">
+									<style>
+										body {
+											font-family: Arial, Helvetica, sans-serif;
+										}
+
+										input[type=text],
+										input[type=password] {
+											width: 100%;
+											padding: 12px 20px;
+											margin: 8px 0;
+											display: inline-block;
+											border: 1px solid #ccc;
+											box-sizing: border-box;
+										}
+
+										/* Set a style for all buttons */
+										button {
+											background-color: #4CAF50;
+											color: white;
+											padding: 14px 20px;
+											margin: 8px 0;
+											border: none;
+											cursor: pointer;
+											width: 100%;
+										}
+
+										button:hover {
+											opacity: 0.8;
+										}
+
+										/* Extra styles for the cancel button */
+										.cancelbtn {
+											width: auto;
+											padding: 10px 18px;
+											background-color: #f44336;
+										}
+
+										/* Center the image and position the close button */
+										.imgcontainer {
+											text-align: center;
+											margin: 24px 0 12px 0;
+											position: relative;
+										}
+
+										img.avatar {
+											width: 40%;
+											border-radius: 50%;
+										}
+
+										.container {
+											padding: 16px;
+										}
+
+										span.psw {
+											float: right;
+											padding-top: 16px;
+										}
+
+										/* The Modal (background) */
+										.modal {
+											display: none;
+											/* Hidden by default */
+											position: fixed;
+											/* Stay in place */
+											z-index: 1;
+											/* Sit on top */
+											left: 0;
+											top: 0;
+											width: 100%;
+											/* Full width */
+											height: 100%;
+											/* Full height */
+											overflow: auto;
+											/* Enable scroll if needed */
+											background-color: rgb(0, 0, 0);
+											/* Fallback color */
+											background-color: rgba(0, 0, 0, 0.4);
+											/* Black w/ opacity */
+											padding-top: 60px;
+										}
+
+										/* Modal Content/Box */
+										.modal-content {
+											background-color: #fefefe;
+											margin: 5% auto 15% auto;
+											/* 5% from the top, 15% from the bottom and centered */
+											border: 1px solid #888;
+											width: 80%;
+											/* Could be more or less, depending on screen size */
+										}
+
+										/* The Close Button (x) */
+										.close {
+											position: absolute;
+											right: 25px;
+											top: 0;
+											color: #000;
+											font-size: 35px;
+											font-weight: bold;
+										}
+
+										.close:hover,
+										.close:focus {
+											color: red;
+											cursor: pointer;
+										}
+
+										/* Add Zoom Animation */
+										.animate {
+											-webkit-animation: animatezoom 0.6s;
+											animation: animatezoom 0.6s
+										}
+
+										@-webkit-keyframes animatezoom {
+											from {
+												-webkit-transform: scale(0)
+											}
+
+											to {
+												-webkit-transform: scale(1)
+											}
+										}
+
+										@keyframes animatezoom {
+											from {
+												transform: scale(0)
+											}
+
+											to {
+												transform: scale(1)
+											}
+										}
+
+										/* Change styles for span and cancel button on extra small screens */
+										@media screen and (max-width: 300px) {
+											span.psw {
+												display: block;
+												float: none;
+											}
+
+											.cancelbtn {
+												width: 100%;
+											}
+										}
+									</style>
+								</head>
+
+
+
+								<script>
+									// Get the modal
+									var modal = document.getElementById('id01');
+
+									// When the user clicks anywhere outside of the modal, close it
+									window.onclick = function (event) {
+										if (event.target == modal) {
+											modal.style.display = "none";
+										}
+									}
+								</script>
+
+
+
+
+								<head>
+									<meta name="viewport" content="width=device-width, initial-scale=1">
+									<!-- Add icon library -->
+									<link rel="stylesheet"
+										href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+									<style>
+										body {
+											font-family: Arial, Helvetica, sans-serif;
+										}
+
+										* {
+											box-sizing: border-box;
+										}
+
+										.input-container {
+											display: -ms-flexbox;
+											/* IE10 */
+											display: flex;
+											width: 100%;
+											margin-bottom: 15px;
+										}
+
+										.icon {
+											padding: 10px;
+											background: rgb(71, 148, 90);
+											color: white;
+											min-width: 50px;
+											text-align: center;
+										}
+
+										.input-field {
+											width: 100%;
+											padding: 10px;
+											outline: none;
+										}
+
+										.input-field:focus {
+											border: 2px solid rgb(71, 148, 90);
+										}
+
+										/* Set a style for the submit button */
+										.btn {
+											background-color: rgb(71, 148, 90);
+											color: white;
+											padding: 15px 20px;
+											border: none;
+											cursor: pointer;
+											width: 100%;
+											opacity: 0.9;
+										}
+
+										.btn:hover {
+											opacity: 1;
+										}
+									</style>
+								</head>
+
+
+
+								<form style="max-width:500px;margin:auto" id="app">
+									<h2><br>New to THRIVE? Create an Account Below</h2>
+									<div class="input-container">
+										<i class="fa fa-user icon"></i>
+										<input v-model="name" class="input-field" type="text" placeholder="Name" name="name">
+									</div>
+
+									<div class="input-container">
+										<i class="fa fa-envelope icon"></i>
+										<input v-model="email" class="input-field" type="text" placeholder="Email" name="email">
+									</div>
+
+									<div class="input-container">
+										<i class="fa fa-key icon"></i>
+										<input v-model="password" class="input-field" type="password" placeholder="Password"
+											name="password">
+									</div>
+
+									<div class="input-container">
+										<i class="fa fa-user icon"></i>
+										<input v-model="phone" class="input-field" type="text" placeholder="Phone (numbers only)"
+											name="phone">
+									</div>
+
+									<div class="input-container">
+										<i class="fa fa-user icon"></i>
+										<input v-model="bday" class="input-field" type="datetime" placeholder="Birthdate (yyyy/mm/dd)"
+											name="bday">
+									</div>
+
+									<div class="input-container">
+										<i class="fa fa-user icon"></i>
+										<input v-model="org" class="input-field" type="text" placeholder="Organization (optional)"
+											name="org">
+									</div>
+
+									<button @click.prevent="signup()" type="submit" class="btn">Create Account</button>
+
+								</form>
+
+
+
+
+
+
+						</section>
 
 					</div>
-				</footer>
 
-		</div>
+					<div class="col-12">
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+						<!-- Contact -->
+						<section>
+							<h2 class="major"><span>Need Help?</span></h2>
+							<p>
+								<center>Please contact Becca Campbell, our volunteer coordinator, for any questions about your visit.
+								</center>
+							</p>
 
-	</body>
+						</section>
+						<!-- About -->
+						<section>
+							<h2 class="major"><span>We are thankful for you!</span></h2>
+
+						</section>
+
+					</div>
+				</div>
+
+				<footer>
+					<!-- Copyright -->
+					<center>
+						<div id="copyright">
+							<ul class="menu">
+								<li>&copy; Thrive Lonsdale. All rights reserved</li>
+								<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</center>
+
+			</div>
+			</footer>
+
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/login.js"></script>
+	<script src="assets/js/account.js"></script>
+
+
+
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+
+
+</body>
+
 </html>
